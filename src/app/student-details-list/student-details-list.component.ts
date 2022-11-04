@@ -3,7 +3,7 @@ import { StudentDetails } from './student-details';
 
 @Component({
   selector: 'app-student-details-list',
-  templateUrl: './student-details-list.component.html',
+  templateUrl: './student-details-list-bootstrap.component.html',
   styleUrls: ['./student-details-list.component.css']
 })
 export class StudentDetailsListComponent implements OnInit {

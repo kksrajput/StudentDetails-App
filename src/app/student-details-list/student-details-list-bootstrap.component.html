@@ -1,19 +1,25 @@
 <!-- <h3>student-details-list works!</h3> -->
 
 <!-- <p>{{ studentDetailsList[0].firstName }}</p> -->
-<table class = "table table-hover" border = "1">
+<table class = "table s table-hover" border = "1">
     <thead>
         <tr><th class="table-primary">First Name</th>
         <th class="table-primary">Last Name</th>
         <th class="table-primary">Email</th>
         <th class="table-primary">Marks</th>
+        <th class="table-primary">Topped</th>
     </thead>
     <tbody>
-        <tr *ngFor = "let temp of studentDetailsList">
-            <td class="table-secondary">{{ temp.firstName }}</td>
-            <td class="table-secondary">{{  temp.lastName }}</td>
-            <td class="table-secondary">{{  temp.email }}</td>
-            <td class="table-secondary">{{  temp.marks }}</td>
+        <tr *ngFor = "let temp of studentDetailsList" [ngClass] = "{'s':temp.marks>80}">
+            <td class="table-light">{{ temp.firstName }}</td>
+            <td class="table-light">{{  temp.lastName }}</td>
+            <td class="table-light">{{  temp.email }}</td>
+            <td class="table-light">{{  temp.marks  }}</td><!--| currency :'USD'*/-->
+            <td class="table-light" >
+                <div *ngIf = "temp.marks > 85;else myBlock">Yes</div>
+                <ng-template #myBlock>No</ng-template>
+            </td>
+
         </tr>
     </tbody>
 </table>

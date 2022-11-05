@@ -10,10 +10,12 @@ Test
     </thead>
     <tbody>
         <tr *ngFor = "let temp of studentDetailsList">
+            <!-- <div [ngClass] = "{'s': temp.marks >= 80}"> -->
             <td>{{ temp.firstName }}</td>
             <td>{{  temp.lastName }}</td>
             <td>{{  temp.email }}</td>
             <td>{{  temp.marks }}</td>
+        <!-- </div> -->
         </tr>
     </tbody>
 </table>

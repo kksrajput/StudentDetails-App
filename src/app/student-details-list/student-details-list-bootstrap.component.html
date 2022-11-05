@@ -10,12 +10,12 @@
         <th class="table-primary">Topped</th>
     </thead>
     <tbody>
-        <tr *ngFor = "let temp of studentDetailsList" [ngClass] = "{'s':temp.marks>80}">
-            <td class="table-light">{{ temp.firstName }}</td>
-            <td class="table-light">{{  temp.lastName }}</td>
-            <td class="table-light">{{  temp.email }}</td>
-            <td class="table-light">{{  temp.marks  }}</td><!--| currency :'USD'*/-->
-            <td class="table-light" >
+        <tr *ngFor = "let temp of studentDetailsList" [ngClass] = "{'s':temp.marks>90}" [ngClass] = "{'table-light':temp.marks<90}">
+            <td>{{ temp.firstName }}</td>
+            <td>{{  temp.lastName }}</td>
+            <td>{{  temp.email }}</td>
+            <td>{{  temp.marks  }}</td><!--| currency :'USD'*/-->
+            <td>
                 <div *ngIf = "temp.marks > 85;else myBlock">Yes</div>
                 <ng-template #myBlock>No</ng-template>
             </td>
